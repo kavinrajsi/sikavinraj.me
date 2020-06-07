@@ -15,4 +15,4 @@ npm run start
 npm run build
 ```
 
-Refer to [yeoman documentation](http://yeoman.io/authoring/) to learn more about it.
+Refer to [yeoman documentation](https://yeoman.io/authoring/) to learn more about it.
