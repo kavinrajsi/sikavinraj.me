@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -11,7 +11,15 @@
       Kavinraj | A firm believer in the mobile-first approach. Always eager to
       learn to improve the skillset
     </title>
-
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      name="bingbot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
     <link rel="manifest" href="./manifest.json" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#150d1c" />
@@ -25,22 +33,79 @@
     <meta name="msapplication-navbutton-color" content="#150d1c" />
     <meta name="msapplication-starturl" content="/" />
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+
+    <link
+      rel="preconnect dns-prefetch"
+      href="https://in.hotjar.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect dns-prefetch"
+      href="https://vars.hotjar.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect dns-prefetch"
+      href="https://script.hotjar.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect dns-prefetch"
+      href="https://stats.g.doubleclick.net"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="script"
+      href="https://www.google-analytics.com/analytics.js"
+    />
+    <link
+      rel="preload"
+      as="script"
+      href="https://static.hotjar.com/c/hotjar-1845130.js?sv=6"
+    />
+    <link
+      rel="preload"
+      as="script"
+      href="https://www.googletagmanager.com/gtag/js?id=UA-76148848-1"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="preload" href="./scripts/vendor.js" as="script" />
+    <link rel="preload" href="./images/angleritech.png" as="image" />
+    <link rel="preload" href="./images/cax-logo.png" as="image" />
+    <link rel="preload" href="./images/testimonials.png" as="image" />
+    <link rel="preload" href="./images/angleritech.webp" as="image" />
+    <link rel="preload" href="./images/cax-logo.webp" as="image" />
+    <link rel="preload" href="./images/testimonials.webp" as="image" />
+    <link
+      rel="preload"
+      href="http://ghchart.rshah.org/fff/kavinrajsi"
+      as="xml"
+    />
 
     <!-- Place favicon.ico in the root directory -->
     <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis:wght@500&family=Muli:wght@400;500"
-      as="style"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis:wght@500&family=Muli:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Muli:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="/node_modules/aos/dist/aos.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <!-- endbuild -->
+    <noscript>
+      <div class="noscriptmsg">
+        For full functionality of this site it is necessary to enable
+        JavaScript. Here are the
+        <a href="https://www.enable-javascript.com/">
+          instructions how to enable JavaScript in your web browser</a
+        >.
+      </div>
+    </noscript>
+    <script>
+      document.documentElement.className =
+        document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
+    </script>
   </head>
 
   <body class="container">
@@ -53,15 +118,33 @@
     <![endif]-->
     <header>
       <div class="about-me">
-        <div class="about-me--signature">kavinrajsi</div>
-        <div class="about-me--intro">
+        <div data-aos="fade-up" class="about-me--signature">
+          <svg
+            width="176"
+            height="54"
+            viewBox="0 0 176 54"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.82547 39.7C2.34547 39.54 1.84547 39.08 1.32547 38.32C0.805469 37.52 0.545469 36.8 0.545469 36.16L1.38547 33.64L2.52547 30.04C2.88547 29.52 3.16547 28.9 3.36547 28.18C3.60547 27.42 3.74547 26.98 3.78547 26.86C4.18547 26.1 4.98547 24.26 6.18547 21.34L7.32547 18.58C8.44547 16.18 9.36547 14.02 10.0855 12.1L11.0455 9.88L12.1855 7.24C13.5855 3.84 14.3655 1.86 14.5255 1.3C14.5255 0.979997 14.5855 0.739998 14.7055 0.58C14.8655 0.419999 15.0255 0.339999 15.1855 0.339999C15.3855 0.139999 15.7055 0.0399995 16.1455 0.0399995C16.3455 0.0399995 16.6655 0.359999 17.1055 0.999998C17.5455 1.6 17.7655 2.12 17.7655 2.56C17.7655 3.24 17.4455 4.48 16.8055 6.28C16.1655 8.04 15.3055 10 14.2255 12.16C10.3055 20.6 8.50547 24.98 8.82547 25.3C8.98547 25.22 9.32547 25.06 9.84547 24.82C10.3655 24.54 10.9055 24.2 11.4655 23.8C11.8255 23.6 12.1655 23.4 12.4855 23.2C12.8055 22.96 13.0855 22.76 13.3255 22.6C14.5655 21.76 15.3255 21.3 15.6055 21.22C15.8455 21.06 16.3055 20.78 16.9855 20.38C17.7055 19.9 18.0855 19.64 18.1255 19.6C18.6055 19.36 19.0055 19.24 19.3255 19.24C19.5655 19.24 19.7855 19.32 19.9855 19.48C20.1855 19.64 20.4255 19.88 20.7055 20.2C20.9455 20.48 21.0655 20.76 21.0655 21.04C21.0655 21.32 20.9055 21.62 20.5855 21.94C20.2655 22.22 19.7255 22.6 18.9655 23.08C18.4455 23.44 17.9055 23.78 17.3455 24.1C16.7855 24.42 16.2455 24.74 15.7255 25.06C12.8455 26.82 11.3655 27.76 11.2855 27.88C11.3655 28.04 11.5455 28.4 11.8255 28.96C12.1455 29.52 12.4455 30 12.7255 30.4L13.6255 31.96C14.1055 32.64 14.3455 33.08 14.3455 33.28C14.7055 34.28 15.1855 35.06 15.7855 35.62C16.4255 36.18 17.1055 36.46 17.8255 36.46C18.1855 36.46 18.6055 36.36 19.0855 36.16C19.6855 35.92 20.1655 35.8 20.5255 35.8C21.0855 35.8 21.4655 36.12 21.6655 36.76C21.7855 37 21.8455 37.18 21.8455 37.3C21.8455 37.46 21.5655 37.82 21.0055 38.38C19.9655 39.42 18.9055 39.94 17.8255 39.94C17.4655 39.94 17.0455 39.84 16.5655 39.64C15.9655 39.68 15.2055 39.28 14.2855 38.44C13.4055 37.6 12.1655 36.14 10.5655 34.06C10.5655 33.9 10.3455 33.38 9.90547 32.5C9.74547 32.14 9.56547 31.82 9.36547 31.54C9.16547 31.22 9.02547 31 8.94547 30.88C8.94547 30.72 8.84547 30.52 8.64547 30.28C8.48547 30 8.36547 29.78 8.28547 29.62C7.84547 29.5 7.48547 29.54 7.20547 29.74C6.96547 29.94 6.72547 30.22 6.48547 30.58C6.28547 30.94 6.12547 31.2 6.00547 31.36C5.60547 32.4 5.20547 33.68 4.80547 35.2C4.40547 36.68 4.26547 37.64 4.38547 38.08C4.38547 38.72 4.28547 39.16 4.08547 39.4C3.88547 39.6 3.46547 39.7 2.82547 39.7ZM21.9395 37.84C21.8195 37.6 21.6195 37.36 21.3395 37.12C21.0995 36.84 20.9795 36.66 20.9795 36.58C20.9795 36.14 20.8795 35.8 20.6795 35.56C20.5995 35.48 20.5595 35.3 20.5595 35.02C20.5595 34.38 20.8595 33.3 21.4595 31.78C22.0995 30.22 22.9195 28.54 23.9195 26.74C24.1595 26.5 24.4595 26.08 24.8195 25.48C25.2195 24.88 25.4795 24.54 25.5995 24.46C25.5995 24.3 25.6595 24.16 25.7795 24.04C25.8995 23.88 26.0395 23.8 26.1995 23.8V23.44C26.1995 23.08 26.8595 22.22 28.1795 20.86C29.4995 19.46 30.5795 18.5 31.4195 17.98C32.4195 17.3 33.4395 16.96 34.4795 16.96C35.1995 16.96 35.8195 17.16 36.3395 17.56C36.5395 17.8 37.4595 18.66 39.0995 20.14L41.3195 22.12L40.2395 25.12C39.8795 26.2 39.6995 27.18 39.6995 28.06C39.6995 29.58 40.1395 31.04 41.0195 32.44C41.2195 32.88 41.6195 33.3 42.2195 33.7C42.8195 34.1 43.4195 34.34 44.0195 34.42C44.8995 34.58 45.3395 35.02 45.3395 35.74C45.3395 36.54 44.9795 37.02 44.2595 37.18C44.0995 37.22 43.8595 37.24 43.5395 37.24C41.1795 37.24 39.1395 35.58 37.4195 32.26C37.2595 32.02 37.0395 31.58 36.7595 30.94C36.5195 30.3 36.3795 29.86 36.3395 29.62C36.0995 29.94 35.7995 30.32 35.4395 30.76C35.0795 31.2 34.7395 31.58 34.4195 31.9C30.0595 36.26 26.6195 38.44 24.0995 38.44C23.2995 38.44 22.5795 38.24 21.9395 37.84ZM24.0995 34.48C24.0995 34.68 24.2995 34.74 24.6995 34.66C25.1395 34.58 25.6595 34.38 26.2595 34.06C26.8995 33.74 27.5395 33.32 28.1795 32.8C31.6195 29.84 34.0995 27.26 35.6195 25.06L36.9395 22.9C36.5395 22.06 36.1195 21.46 35.6795 21.1C35.2395 20.7 34.8395 20.5 34.4795 20.5C33.6395 20.5 32.3195 21.56 30.5195 23.68C28.7195 25.76 27.0795 28.22 25.5995 31.06C25.2395 31.74 24.9195 32.44 24.6395 33.16C24.3595 33.84 24.1795 34.28 24.0995 34.48ZM51.3309 38.08C50.9309 38.36 50.6709 38.5 50.5509 38.5C50.3909 38.5 50.0709 38.26 49.5909 37.78C48.8709 37.06 48.3509 35.72 48.0309 33.76C47.7109 31.76 47.5509 28.88 47.5509 25.12C47.7509 22.96 47.8509 20.9 47.8509 18.94C47.9709 18.78 48.2109 18.7 48.5709 18.7C48.9709 18.7 49.3109 18.78 49.5909 18.94C49.9909 19.14 50.2509 19.44 50.3709 19.84C50.5309 20.24 50.6309 21.02 50.6709 22.18C50.7109 23.34 50.7309 24.82 50.7309 26.62C50.6109 28.22 50.5509 29.62 50.5509 30.82C50.5509 31.94 50.6109 32.6 50.7309 32.8C50.8909 33.08 51.0709 33.16 51.2709 33.04C51.4709 32.92 51.8909 32.54 52.5309 31.9L54.8709 28.36C55.0709 28.16 55.4309 27.68 55.9509 26.92L56.9109 25.72C57.0309 25.52 57.2309 25.24 57.5109 24.88C57.8309 24.48 58.0309 24.18 58.1109 23.98C58.5509 23.26 59.0109 22.64 59.4909 22.12C59.9709 21.6 60.2909 21.34 60.4509 21.34C60.6109 21.42 60.7109 21.46 60.7509 21.46C60.8309 21.46 60.9309 21.44 61.0509 21.4C61.1709 21.36 61.2709 21.34 61.3509 21.34C61.5109 21.18 61.6709 21.1 61.8309 21.1C62.0709 21.1 62.2909 21.18 62.4909 21.34C62.8909 21.66 63.0909 21.94 63.0909 22.18C63.0909 22.5 62.7709 23.24 62.1309 24.4C61.4909 25.52 61.0309 26.16 60.7509 26.32L60.1509 26.92C60.0309 27.44 59.2909 28.62 57.9309 30.46C56.6109 32.3 55.2909 34.06 53.9709 35.74C53.5709 36.26 53.1109 36.74 52.5909 37.18C52.1109 37.62 51.6909 37.92 51.3309 38.08ZM72.4742 14.2C72.3542 14.32 72.2342 14.38 72.1142 14.38C71.9542 14.38 71.6942 14.26 71.3342 14.02C70.9342 13.98 70.3942 13.64 69.7142 13C69.0742 12.32 68.7542 11.88 68.7542 11.68C68.6742 10.88 68.7942 10.02 69.1142 9.1C69.4342 8.18 70.0142 7.7 70.8542 7.66C70.9742 7.66 71.1342 7.7 71.3342 7.78C71.5342 7.82 71.8742 7.94 72.3542 8.14C72.4342 8.3 72.5942 8.64 72.8342 9.16C73.1142 9.68 73.3142 10.18 73.4342 10.66C73.5942 11.14 73.6742 11.58 73.6742 11.98C73.6742 12.94 73.2742 13.68 72.4742 14.2ZM65.6942 38.14C65.0942 38.14 64.5542 37.76 64.0742 37C63.6342 36.24 63.3742 35.48 63.2942 34.72C63.4542 33.2 63.5742 32.12 63.6542 31.48C63.9742 30 64.4742 27.98 65.1542 25.42C65.8742 22.82 66.3142 21.36 66.4742 21.04C66.5942 20.84 66.7742 20.74 67.0142 20.74C67.2542 20.74 67.5142 20.82 67.7942 20.98C68.0742 21.14 68.3142 21.32 68.5142 21.52C68.8342 21.96 68.9942 22.46 68.9942 23.02C68.9942 23.86 68.5942 25.62 67.7942 28.3C67.2342 30.3 66.8742 31.72 66.7142 32.56C66.5542 33.4 66.4942 34.3 66.5342 35.26C66.4942 35.54 66.4142 36.02 66.2942 36.7C66.2142 37.34 66.1342 37.74 66.0542 37.9C65.9742 38.06 65.8542 38.14 65.6942 38.14ZM74.1456 37.36C74.0256 37.36 73.8056 37.26 73.4856 37.06C73.2056 36.86 72.9656 36.66 72.7656 36.46C72.4856 36.18 72.3056 35.88 72.2256 35.56C72.1856 35.24 72.1656 34.5 72.1656 33.34C72.1656 32.1 72.4056 30.74 72.8856 29.26C73.4056 27.78 74.3056 25.64 75.5856 22.84L77.5656 18.64C77.6856 18.36 77.9656 17.96 78.4056 17.44H79.0056C79.2856 17.44 79.5856 17.62 79.9056 17.98C80.2656 18.34 80.5256 18.76 80.6856 19.24C80.6856 19.88 80.5856 20.48 80.3856 21.04C80.2256 21.6 79.7656 22.38 79.0056 23.38C78.6856 23.86 78.3056 24.62 77.8656 25.66C77.4256 26.7 77.1256 27.58 76.9656 28.3C76.8456 28.5 76.6856 28.84 76.4856 29.32C76.3256 29.8 76.1256 30.3 75.8856 30.82L75.5856 32.14L79.6056 28C81.3656 26.24 82.7856 24.96 83.8656 24.16C84.9856 23.36 85.9056 22.96 86.6256 22.96C87.4656 22.96 88.1456 23.5 88.6656 24.58C89.0256 25.18 89.2656 25.66 89.3856 26.02C89.5056 26.34 89.5656 26.86 89.5656 27.58C89.5656 27.82 89.5256 28.5 89.4456 29.62V33.34C90.0056 33.22 90.5056 33.06 90.9456 32.86C91.4256 32.66 91.7856 32.52 92.0256 32.44C92.9456 32.04 93.9656 31.8 95.0856 31.72C95.0056 32.4 94.7056 33.14 94.1856 33.94C93.6656 34.74 93.0256 35.42 92.2656 35.98C91.5056 36.5 90.7656 36.76 90.0456 36.76C89.4856 36.76 88.8856 36.5 88.2456 35.98C87.6456 35.46 87.2056 34.88 86.9256 34.24C86.7656 33.8 86.6656 33.26 86.6256 32.62C86.6256 31.98 86.6256 31.08 86.6256 29.92V27.7C86.6256 27.3 86.5056 27.1 86.2656 27.1C86.1056 27.1 85.7256 27.34 85.1256 27.82C84.3256 28.54 83.0256 29.84 81.2256 31.72C79.5056 33.52 78.0056 34.92 76.7256 35.92C75.4856 36.88 74.6256 37.36 74.1456 37.36ZM96.9173 37.9C96.5973 37.66 96.3773 37.44 96.2573 37.24C96.1373 37.04 96.0773 36.74 96.0773 36.34C96.0773 35.98 96.0973 35.68 96.1373 35.44C96.2573 34.08 96.5573 32.5 97.0373 30.7L97.3373 29.5C97.4573 28.5 98.1573 26.4 99.4373 23.2C100.717 20 101.757 17.82 102.557 16.66C102.877 16.46 103.217 16.36 103.577 16.36C104.097 16.36 104.537 16.54 104.897 16.9C105.137 17.06 105.257 17.36 105.257 17.8C105.257 18.2 105.097 18.8 104.777 19.6C104.497 20.36 103.997 21.5 103.277 23.02C103.117 23.34 102.837 23.94 102.437 24.82C102.077 25.7 101.897 26.22 101.897 26.38C101.897 26.46 101.917 26.5 101.957 26.5C102.037 26.5 102.117 26.48 102.197 26.44C102.277 26.36 102.357 26.3 102.437 26.26C102.877 25.5 103.937 24.46 105.617 23.14C107.337 21.82 108.517 21 109.157 20.68C109.437 20.52 109.797 20.36 110.237 20.2C110.677 20.04 110.977 19.92 111.137 19.84C111.777 19.52 112.537 19.36 113.417 19.36C113.977 19.36 114.457 19.46 114.857 19.66C115.297 19.82 115.597 20.08 115.757 20.44C115.797 20.72 115.897 20.94 116.057 21.1C116.257 21.26 116.397 21.36 116.477 21.4C116.597 21.4 116.677 21.46 116.717 21.58C116.757 21.66 116.777 21.72 116.777 21.76C116.777 22.04 116.617 22.22 116.297 22.3C115.977 22.34 115.397 22.38 114.557 22.42C114.117 22.46 113.657 22.56 113.177 22.72C112.697 22.88 112.217 23.08 111.737 23.32C109.497 24.6 107.817 25.6 106.697 26.32C105.617 27.04 104.517 28.02 103.397 29.26C102.957 29.74 102.377 30.6 101.657 31.84C101.377 32.12 101.077 32.86 100.757 34.06C100.477 35.22 100.337 35.94 100.337 36.22C100.297 36.34 100.217 36.58 100.097 36.94C99.9773 37.26 99.7973 37.58 99.5573 37.9C99.0773 38.54 98.6773 38.86 98.3573 38.86C97.9973 38.86 97.5173 38.54 96.9173 37.9ZM118.618 38.02C117.898 38.18 117.118 37.96 116.278 37.36C115.438 36.76 114.938 36.1 114.778 35.38C114.738 35.22 114.718 34.96 114.718 34.6C114.718 33.12 115.278 31.22 116.398 28.9C117.558 26.54 118.958 24.38 120.598 22.42C122.238 20.42 123.738 19.16 125.098 18.64C125.938 18.2 126.478 17.98 126.718 17.98C126.958 17.98 127.498 18.2 128.338 18.64C128.898 18.8 129.318 18.98 129.598 19.18C129.878 19.38 130.238 19.78 130.678 20.38C131.198 21.42 131.578 22.7 131.818 24.22C132.058 25.06 132.178 25.66 132.178 26.02C132.178 26.34 132.058 26.62 131.818 26.86C131.778 26.9 131.698 26.98 131.578 27.1C131.498 27.22 131.458 27.32 131.458 27.4C131.458 27.44 131.498 27.46 131.578 27.46C131.578 27.5 131.558 27.6 131.518 27.76C131.478 27.88 131.398 28.06 131.278 28.3C130.798 29.82 130.558 31.12 130.558 32.2C130.558 32.56 130.598 32.94 130.678 33.34C131.078 34.38 131.758 34.9 132.718 34.9C133.518 34.9 134.278 34.54 134.998 33.82C135.638 33.38 136.098 33.08 136.378 32.92C136.698 32.72 136.858 32.76 136.858 33.04C136.898 33.08 136.978 33.14 137.098 33.22C137.218 33.3 137.338 33.34 137.458 33.34C137.738 33.34 137.878 33.52 137.878 33.88C137.878 34.24 137.738 34.64 137.458 35.08C137.178 35.36 136.958 35.6 136.798 35.8C136.638 36 136.558 36.16 136.558 36.28L135.658 37.12C134.898 37.56 133.998 37.78 132.958 37.78C131.878 37.78 131.018 37.56 130.378 37.12C129.818 36.72 129.278 36.14 128.758 35.38C128.238 34.62 127.898 33.94 127.738 33.34L127.438 32.74L125.698 33.88C125.298 34.28 124.838 34.7 124.318 35.14C123.798 35.54 123.458 35.82 123.298 35.98C122.978 36.38 122.698 36.58 122.458 36.58H121.858C121.858 36.86 121.458 37.18 120.658 37.54C119.898 37.86 119.218 38.02 118.618 38.02ZM118.018 34.78C118.458 34.78 119.578 34.16 121.378 32.92C123.178 31.64 124.318 30.7 124.798 30.1L126.538 28.3C127.178 27.58 127.678 26.76 128.038 25.84C128.438 24.92 128.638 24.08 128.638 23.32C128.638 22.64 128.538 22.16 128.338 21.88C128.178 21.4 127.938 21.16 127.618 21.16C127.458 21.16 126.998 21.3 126.238 21.58C125.478 22.06 124.398 23.16 122.998 24.88C121.638 26.6 120.418 28.38 119.338 30.22C118.258 32.02 117.718 33.34 117.718 34.18C117.718 34.3 117.758 34.42 117.838 34.54C117.918 34.66 117.978 34.74 118.018 34.78ZM145.288 11.14C144.648 10.5 144.328 9.84 144.328 9.16C144.328 8.68 144.508 8.2 144.868 7.72C145.388 6.88 145.648 6.08 145.648 5.32C146.528 4.88 147.208 4.66 147.688 4.66C148.248 4.66 148.808 4.94 149.368 5.5C149.888 5.98 150.148 6.58 150.148 7.3C150.148 8.34 149.568 9.44 148.408 10.6C147.648 11.36 147.008 11.74 146.488 11.74C146.088 11.74 145.688 11.54 145.288 11.14ZM128.668 53.14C127.588 52.78 126.648 51.92 125.848 50.56C125.008 49.24 124.588 47.98 124.588 46.78C124.588 46.26 124.668 45.84 124.828 45.52C125.028 45.08 125.248 44.86 125.488 44.86C125.608 44.86 125.848 45.28 126.208 46.12C126.568 47 126.748 47.54 126.748 47.74C126.748 48.1 127.108 48.6 127.828 49.24C128.508 49.92 129.088 50.28 129.568 50.32C130.408 50.4 131.208 50.12 131.968 49.48C132.728 48.88 133.488 47.76 134.248 46.12C134.808 45.2 135.168 44.5 135.328 44.02C135.528 43.58 135.708 42.96 135.868 42.16L136.168 40.72C136.328 40.16 136.508 39.36 136.708 38.32C136.948 37.28 137.108 36.52 137.188 36.04C137.268 35.6 137.388 34.94 137.548 34.06C137.708 33.18 137.868 32.5 138.028 32.02C138.028 31.58 138.108 31.04 138.268 30.4C138.468 29.76 138.708 29.24 138.988 28.84C139.108 27.96 139.468 26.58 140.068 24.7C140.668 22.82 141.148 21.44 141.508 20.56C141.588 20.36 141.708 20.06 141.868 19.66C142.028 19.22 142.228 18.88 142.468 18.64C142.828 18.28 143.328 18.1 143.968 18.1C144.408 18.1 144.868 18.16 145.348 18.28C145.668 18.4 146.048 18.7 146.488 19.18C146.928 19.66 147.268 20.14 147.508 20.62C147.748 21.1 147.768 21.38 147.568 21.46C147.568 21.58 147.508 21.64 147.388 21.64C147.268 21.64 147.148 21.62 147.028 21.58C146.908 21.5 146.768 21.46 146.608 21.46C146.488 21.34 146.368 21.26 146.248 21.22C146.128 21.18 146.048 21.16 146.008 21.16C145.568 21.16 144.948 22.2 144.148 24.28C143.388 26.32 142.788 28.16 142.348 29.8L141.808 31.84C141.368 33.32 141.108 34.28 141.028 34.72L140.788 36.1C140.628 37.02 140.488 37.7 140.368 38.14C140.128 38.66 139.888 39.44 139.648 40.48C139.488 41.44 139.308 42.16 139.108 42.64C138.628 44.56 137.808 46.58 136.648 48.7C135.488 51.06 134.208 52.54 132.808 53.14C132.448 53.34 131.808 53.44 130.888 53.44C129.928 53.44 129.188 53.34 128.668 53.14ZM152.274 39.16C150.274 39.16 148.814 38.44 147.894 37C147.614 36.68 147.474 36.28 147.474 35.8C147.474 35.56 147.514 35.36 147.594 35.2C147.714 35 147.854 34.9 148.014 34.9C148.214 34.9 148.434 35.04 148.674 35.32C149.234 35.64 150.034 35.8 151.074 35.8C152.194 35.8 153.294 35.6 154.374 35.2C155.654 34.64 156.014 34.2 155.454 33.88H155.514C153.954 33.48 152.394 32.72 150.834 31.6C149.314 30.44 148.474 29.4 148.314 28.48C148.194 28 148.134 27.5 148.134 26.98C148.134 25.98 148.354 24.98 148.794 23.98C149.234 22.98 149.834 22.06 150.594 21.22C151.794 20.46 152.574 20.04 152.934 19.96V20.02C153.614 19.34 154.434 18.76 155.394 18.28C156.394 17.8 157.674 17.3 159.234 16.78L160.134 16.66L161.334 16.54C161.374 16.58 161.474 16.62 161.634 16.66C161.794 16.7 161.954 16.74 162.114 16.78C162.354 16.9 162.554 16.96 162.714 16.96C163.474 17.08 164.134 17.54 164.694 18.34C165.294 19.14 165.554 19.9 165.474 20.62C165.394 21.42 165.154 22.12 164.754 22.72C164.394 23.28 163.954 23.6 163.434 23.68C163.474 23.64 163.394 23.56 163.194 23.44C162.994 23.32 162.834 23.22 162.714 23.14L162.534 23.26C162.534 23.22 162.514 23.16 162.474 23.08C162.474 22.96 162.434 22.84 162.354 22.72C162.234 22.48 162.174 22.18 162.174 21.82L162.234 20.92L162.354 20.32C162.354 20.2 162.274 20.12 162.114 20.08C161.954 20 161.734 19.96 161.454 19.96L160.974 19.9C160.334 19.9 159.554 20.06 158.634 20.38C157.714 20.7 156.954 21.1 156.354 21.58C154.994 22.46 153.974 23.24 153.294 23.92C152.654 24.56 152.134 25.32 151.734 26.2C151.254 26.88 151.014 27.38 151.014 27.7C151.014 28.14 151.314 28.58 151.914 29.02C152.554 29.46 153.574 30 154.974 30.64C156.094 31.12 156.994 31.62 157.674 32.14C158.394 32.66 158.874 33.24 159.114 33.88C159.154 33.96 159.174 34.12 159.174 34.36C159.174 34.64 159.134 34.82 159.054 34.9C159.134 34.98 159.174 35.04 159.174 35.08V35.02C159.334 35.34 159.414 35.6 159.414 35.8C159.414 36.44 159.014 37.04 158.214 37.6C157.414 38.12 156.394 38.5 155.154 38.74H155.214C154.254 39.02 153.274 39.16 152.274 39.16ZM171.183 13.72C170.903 13.44 170.663 12.96 170.463 12.28C170.263 11.6 170.263 11.26 170.463 11.26C170.783 11.22 171.143 10.88 171.543 10.24C171.983 9.56 172.183 9 172.143 8.56C172.143 8.4 172.203 8.26 172.323 8.14C172.443 7.98 172.583 7.88 172.743 7.84C173.063 7.64 173.343 7.54 173.583 7.54C174.263 7.54 174.883 8.02 175.443 8.98C175.683 9.5 175.803 9.96 175.803 10.36C175.803 10.72 175.703 11.1 175.503 11.5C175.303 11.86 174.943 12.34 174.423 12.94C173.743 13.86 173.103 14.32 172.503 14.32C172.103 14.32 171.663 14.12 171.183 13.72ZM165.363 38.08C164.803 37.52 164.523 36.72 164.523 35.68C164.523 35.12 164.623 34.64 164.823 34.24C164.823 34.04 164.863 33.8 164.943 33.52C165.023 33.24 165.063 33.06 165.063 32.98C165.023 32.74 165.183 32.08 165.543 31C166.263 29.4 167.223 26.58 168.423 22.54C168.423 22.34 168.503 22.18 168.663 22.06C168.823 21.9 169.063 21.8 169.383 21.76C169.703 21.68 169.923 21.64 170.043 21.64C170.283 21.64 170.483 21.74 170.643 21.94C170.843 22.1 171.103 22.42 171.423 22.9C171.663 23.14 171.783 23.5 171.783 23.98C171.783 24.74 171.523 25.66 171.003 26.74C170.483 27.9 170.143 28.9 169.983 29.74C169.503 30.82 169.123 31.82 168.843 32.74C168.763 32.98 168.643 33.46 168.483 34.18C168.323 34.9 168.103 35.48 167.823 35.92C167.583 37.04 167.363 37.82 167.163 38.26C166.963 38.7 166.743 38.92 166.503 38.92C166.223 38.92 165.843 38.64 165.363 38.08Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div data-aos="fade-up" class="about-me--intro">
           A web developer over 5 years of front end experience and passion for
           responsive website design. A firm believer in the mobile-first
           approach. Always eager to learn to improve the skillset.
         </div>
         <div class="about-me--services">
           <div class="service">
-            <a target="_blank" rel="noopener" href="https://www.rillusion.com">
+            <a
+              data-aos="fade-up"
+              target="_blank"
+              rel="noopener"
+              href="https://www.rillusion.com"
+            >
               <svg
                 width="151"
                 height="40"
@@ -118,15 +201,28 @@
           </div>
           <div class="service">
             <a
+              data-aos="fade-up"
               target="_blank"
               rel="noopener"
               href="https://www.angleritech.com"
             >
-              <img src="./images/angleritech.png" alt="" />
+              <picture>
+                <source srcset="./images/angleritech.webp" type="image/webp" />
+                <source srcset="./images/angleritech.png" type="image/png" />
+                <img
+                src="./images/angleritech.png"
+                data-src="./images/angleritech.png" class="lazyload"
+                loading="lazy" alt="angleritech" />
+              </picture>
             </a>
           </div>
         </div>
-        <a target="_blank" rel="noopener" href="https://github.com/kavinrajsi">
+        <a
+          data-aos="fade-up"
+          target="_blank"
+          rel="noopener"
+          href="https://github.com/kavinrajsi"
+        >
           <img
             src="http://ghchart.rshah.org/fff/kavinrajsi"
             class="about-me--graph"
@@ -138,41 +234,45 @@
     <main>
       <div class="what-iam--working">
         <div class="what-iam--heading">
-          <h2 class="title-3">
+          <h2 data-aos="fade-up" class="title-3">
             Creating site with high-touch expertise, instinct for users ...
           </h2>
         </div>
         <div class="what-iam--content">
           <div class="what-iam--content__services">
             <ul class="list-column">
-              <h4 class="list-item-h">Development</h4>
-              <li class="list-item-c">HTML / SCSS / jQuery</li>
-              <li class="list-item-c">Handlebarsjs</li>
-              <li class="list-item-c">Gulp / Webpack</li>
-              <li class="list-item-c">GIT</li>
-              <li class="list-item-c">SEO</li>
-              <li class="list-item-c">Web Optimization</li>
-              <li class="list-item-c">Wordpress theme development</li>
+              <li data-aos="fade-up" class="list-item-h">Development</li>
+              <li data-aos="fade-up" class="list-item-c">
+                HTML / SCSS / jQuery
+              </li>
+              <li data-aos="fade-up" class="list-item-c">Handlebarsjs</li>
+              <li data-aos="fade-up" class="list-item-c">Gulp / Webpack</li>
+              <li data-aos="fade-up" class="list-item-c">GIT</li>
+              <li data-aos="fade-up" class="list-item-c">SEO</li>
+              <li data-aos="fade-up" class="list-item-c">Web Optimization</li>
+              <li data-aos="fade-up" class="list-item-c">
+                Wordpress theme development
+              </li>
             </ul>
             <ul class="list-column">
-              <h4 class="list-item-h">Design</h4>
-              <li class="list-item-c">Websites Design</li>
-              <li class="list-item-c">Mobile App Design</li>
+              <li data-aos="fade-up" class="list-item-h">Design</li>
+              <li data-aos="fade-up" class="list-item-c">Websites Design</li>
+              <li data-aos="fade-up" class="list-item-c">Mobile App Design</li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="what-i-worked">
-        <h1 class="title-2">What do I do?</h1>
-        <p class="what-i-worked--text">
+        <h1 data-aos="fade-up" class="title-2">What do I do?</h1>
+        <p data-aos="fade-up" class="what-i-worked--text">
           Assigning tightly focused groups who need to change layout plans for
           improvements.
         </p>
       </div>
 
       <div class="works">
-        <div class="work">
+        <div data-aos="fade-up" class="work">
           <a
             href="https://rillusion.netlify.com/"
             target="_blank"
@@ -243,10 +343,17 @@
           </a>
         </div>
 
-        <div class="work">
+        <div data-aos="fade-up" class="work">
           <a href="https://www.caxpert.com/" target="_blank" rel="noopener">
             <div class="work__logo">
-              <img src="./images/cax-logo.png" />
+              <picture>
+                <source srcset="./images/cax-logo.webp" type="image/webp" />
+                <source srcset="./images/cax-logo.png" type="image/png" />
+                <img
+                src="./images/cax-logo.png"
+                data-src="./images/cax-logo.png" class="lazyload" loading="lazy" alt="CAXPERT"
+                />
+              </picture>
             </div>
             <div class="work__title">
               CAXPERT
@@ -259,7 +366,7 @@
           </a>
         </div>
 
-        <div class="work">
+        <div data-aos="fade-up" class="work">
           <a href="https://avishkaram.com/" target="_blank" rel="noopener">
             <div class="work__logo">
               <svg
@@ -359,13 +466,13 @@
 
         <div class="work work__list">
           <ul>
-            <li>
+            <li data-aos="fade-up">
               <a target="_blank" rel="noopener" href="http://dynamichead.com/">
                 Dynamichead <span class="visit-link">Visit </span></a
               >
             </li>
 
-            <li>
+            <li data-aos="fade-up">
               <a
                 target="_blank"
                 rel="noopener"
@@ -374,36 +481,39 @@
                 DA360 <span class="visit-link">Visit </span></a
               >
             </li>
-            <li>
+            <li data-aos="fade-up">
               <a target="_blank" rel="noopener" href="http://equ.com.au/">
                 equ.com.au <span class="visit-link">Visit </span></a
               >
             </li>
-            <li>
+            <li data-aos="fade-up">
               <a
                 target="_blank"
+                rel="noopener"
                 href="https://github.com/kavinrajsi/murdochfestival"
               >
                 Murdoch Festival <span class="visit-link">Visit </span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up">
               <a
                 target="_blank"
+                rel="noopener"
                 href="https://github.com/kavinrajsi/remote-housing"
               >
                 Remote Housing <span class="visit-link">Visit </span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up">
               <a
                 target="_blank"
+                rel="noopener"
                 href="https://github.com/kavinrajsi/burswoodpark.wa.gov.au"
               >
                 Burswoodpark <span class="visit-link">Visit </span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up">
               <a target="_blank" href="javascript:void(0);">
                 iStoreKart <span class="visit-link">Coming soon </span>
               </a>
@@ -413,7 +523,7 @@
       </div>
 
       <div class="testimonial">
-        <div class="testimonial--card">
+        <div data-aos="fade-up" class="testimonial--card">
           <div class="testimonial--content">
             Kavinraj has extraordinary skill and knowledge in front end
             development. The quality metrics he measures for each project is
@@ -423,7 +533,7 @@
             - Mohamed Hussain
           </h2>
         </div>
-        <div class="testimonial--card">
+        <div data-aos="fade-up" class="testimonial--card">
           <div class="testimonial--content">
             Kavin is extremely efficient at translating designs to pixel perfect
             code. He is very curious at implementing new appropriate
@@ -438,11 +548,13 @@
       </div>
 
       <div class="talk--to">
-        <h1 class="talk--to-me">
+        <h1 data-aos="fade-up" class="talk--to-me">
           <span> Have a project in mind? </span>
           <span> Let’s get to work.</span>
         </h1>
-        <a class="mail--me" href="mailto:we@sikavinraj.me">Email me</a>
+        <a data-aos="fade-up" class="mail--me" href="mailto:we@sikavinraj.me"
+          >Email me</a
+        >
       </div>
     </main>
     <footer class="lead-me-out">
@@ -591,6 +703,10 @@
       </ul>
     </footer>
 
+    <!-- build:js scripts/vendor.js -->
+    <script src="/node_modules/aos/dist/aos.js"></script>
+    <!-- endbuild -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -604,6 +720,54 @@
       gtag("js", new Date());
 
       gtag("config", "UA-76148848-1");
+    </script>
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 1845130, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+    <script>
+      // service worker
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./sw.js")
+            .then((registration) => {
+              console.log("SW registered: ", registration);
+            })
+            .catch((registrationError) => {
+              console.log("SW registration failed: ", registrationError);
+            });
+        });
+      }
+      // all page animation
+      AOS.init({
+        once: true,
+        throttleDelay: 99,
+      });
+      // image lazy load
+      if ("loading" in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach((img) => {
+          img.src = img.dataset.src;
+        });
+      } else {
+        // Dynamically import the LazySizes library
+        const script = document.createElement("script");
+        script.src =
+          "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js";
+        document.body.appendChild(script);
+      }
     </script>
   </body>
 </html>

@@ -6,6 +6,8 @@ const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const { argv } = require('yargs');
+const critical = require('critical').stream;
+const workboxBuild = require('workbox-build');
 
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
@@ -116,6 +118,8 @@ const build = series(
     fonts,
     extras
   ),
+  criticalCss,
+  serviceWorker,
   measureSize
 );
 
@@ -171,6 +175,46 @@ function startDistServer() {
         '/node_modules': 'node_modules'
       }
     }
+  });
+}
+
+function criticalCss() {
+  return src('dist/*.html')
+  .pipe(critical(
+    {
+      inline: true,
+      minify: true,
+      ignore: ["font-face"],
+      base: "dist/",
+      dimensions: [
+        {
+          height: 200,
+          width: 500,
+        },
+        {
+          height: 900,
+          width: 1300,
+        },
+      ],
+    }),
+    (err, output) => {
+      if (err) {
+        console.error(err);
+      } else if (output) {
+        console.log("Generated critical CSS");
+      }
+    }
+  )
+  .pipe(dest('dist'));
+}
+
+function serviceWorker() {
+  return workboxBuild.generateSW({
+    globDirectory: 'dist',
+    globPatterns: [
+      '**/*.{html,json,js,css,png,jpg,svg}',
+    ],
+    swDest: 'dist/sw.js',
   });
 }
 
