@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="" />
+    <meta name="description" content="A firm believer in the mobile-first approach. Always eager to learn to improve the skillset" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kavinraj</title>
+    <title>Kavinraj | A firm believer in the mobile-first approach. Always eager to learn to improve the skillset</title>
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#150d1c">
+    <meta name="application-name" content="kavinrajsi">
+    <meta name="apple-mobile-web-app-title" content="kavinrajsi">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-navbutton-color" content="#150d1c">
+    <meta name="msapplication-starturl" content="/">
+
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
     <!-- Place favicon.ico in the root directory -->
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis:wght@500&family=Muli:wght@400;500"
       as="style"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat&family=Dosis:wght@500&family=Muli:wght@400;500&display=swap"
       rel="stylesheet"
@@ -20,6 +33,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <!-- endbuild -->
   </head>
+
   <body class="container">
     <!--[if IE]>
       <p class="browserupgrade">
@@ -483,22 +497,19 @@
       </ul>
     </footer>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-76148848-1"
+    ></script>
     <script>
-      (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] ||
-          (b[l] = function () {
-            (b[l].q = b[l].q || []).push(arguments);
-          });
-        b[l].l = +new Date();
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = "https://www.google-analytics.com/analytics.js";
-        r.parentNode.insertBefore(e, r);
-      })(window, document, "script", "ga");
-      ga("create", "UA-XXXXX-X");
-      ga("send", "pageview");
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-76148848-1");
     </script>
   </body>
 </html>
