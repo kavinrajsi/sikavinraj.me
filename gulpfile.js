@@ -184,8 +184,7 @@ function criticalCss() {
     {
       inline: true,
       minify: true,
-      ignore: ["font-face"],
-      base: "dist/",
+      base: 'dist/',
       dimensions: [
         {
           height: 200,
@@ -201,12 +200,13 @@ function criticalCss() {
       if (err) {
         console.error(err);
       } else if (output) {
-        console.log("Generated critical CSS");
+        console.log('Generated critical CSS');
       }
     }
   )
   .pipe(dest('dist'));
 }
+
 
 function serviceWorker() {
   return workboxBuild.generateSW({
