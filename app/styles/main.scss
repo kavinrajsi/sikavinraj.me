@@ -556,11 +556,11 @@ body {
 
       @media(min-width: $mobile) {
         // margin-bottom: 33px;
-        flex: 1 0 auto;
+        // flex: 1 0 auto;
         text-align: center;
       }
 
-      &:nth-child(1) {
+      &:first-child {
         margin-top: 40px;
         order: 2;
         margin-right: 0px;
@@ -587,15 +587,9 @@ body {
           }
         }
       }
-
-
       &:last-child {
         margin-right: 0;
       }
-
-
     }
-
-
   }
 }
