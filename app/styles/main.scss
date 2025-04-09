@@ -1,6 +1,6 @@
-@import 'reset';
-@import 'variable';
-.no-js{
+@import "reset";
+@import "variable";
+.no-js {
   overflow: hidden;
 }
 .noscriptmsg,
@@ -32,11 +32,10 @@ body {
   padding-right: 15px;
 }
 
-
 .title-2 {
   font-size: 36px;
 
-  @media(min-width: $tablet) {
+  @media (min-width: $tablet) {
     font-size: 48px;
   }
 
@@ -49,7 +48,7 @@ body {
 .title-3 {
   font-size: 20px;
 
-  @media(min-width: $tablet) {
+  @media (min-width: $tablet) {
     font-size: 28px;
   }
 
@@ -67,7 +66,7 @@ body {
   &:after {
     content: "";
     display: inline-block;
-    background: url('../images/link.png') no-repeat center;
+    background: url("../images/link.png") no-repeat center;
     background-size: contain;
     margin-left: 20px;
     width: 16px;
@@ -75,9 +74,8 @@ body {
     vertical-align: bottom;
     transform: translateY(30px);
     transform-origin: top;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     will-change: transform;
-
   }
 
   &:before {
@@ -90,7 +88,7 @@ body {
 
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     will-change: transform;
 
     display: block;
@@ -109,7 +107,7 @@ body {
     // text-align: center;
     margin-bottom: 25px;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       margin-bottom: 50px;
     }
   }
@@ -120,7 +118,7 @@ body {
     text-align: center;
     font-size: 16px;
 
-    @media(min-width: $mobile) {
+    @media (min-width: $mobile) {
       font-size: 20px;
     }
 
@@ -131,7 +129,7 @@ body {
   &--services {
     margin: 0 auto 50px;
 
-    @media(min-width: $mobile) {
+    @media (min-width: $mobile) {
       margin-bottom: 80px;
     }
 
@@ -155,7 +153,7 @@ body {
   &--working {
     margin: 40px auto;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -166,7 +164,7 @@ body {
 
   &--heading,
   &--content {
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       flex: 0 0 50%;
       max-width: 50%;
     }
@@ -180,7 +178,7 @@ body {
         &:first-child {
           margin-right: 20px;
 
-          @media(min-width: $tablet) {
+          @media (min-width: $tablet) {
             margin-right: 80px;
           }
         }
@@ -189,14 +187,14 @@ body {
           font-size: 16px;
           letter-spacing: 0.5px;
           padding: 12px 0;
-          border-bottom: 3px solid rgba(255, 255, 255, .1);
+          border-bottom: 3px solid rgba(255, 255, 255, 0.1);
           text-transform: uppercase;
         }
 
         .list-item-c {
           padding: 12px 0;
           line-height: 1.25;
-          border-bottom: 1px solid rgba(255, 255, 255, .1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
           &:last-child {
             border-bottom: 0;
@@ -211,7 +209,7 @@ body {
   max-width: 340px;
   margin-top: 80px;
 
-  @media(min-width: $tablet) {
+  @media (min-width: $tablet) {
     margin-top: 120px;
     margin-left: 80px;
   }
@@ -219,7 +217,7 @@ body {
   &--text {
     font-weight: 400;
     font-size: 18px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 1.5;
     padding-bottom: 80px;
   }
@@ -232,33 +230,33 @@ body {
   display: grid;
   gap: 60px 30px;
 
-  @media(min-width: 500px) {
+  @media (min-width: 500px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media(min-width: $tablet) {
+  @media (min-width: $tablet) {
     display: grid;
     margin-left: 80px;
     row-gap: 30px;
   }
 
-  @media(min-width: $ptablet) {
+  @media (min-width: $ptablet) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  @media(min-width: $desktop) {
+  @media (min-width: $desktop) {
     margin-left: 0;
     gap: 100px 60px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
       ". . . . one one one one two two two two"
-      ". . . . three three three three . . . ."
-      ". . . . four four four four four . . .";
+      ". . . . three three three three four four four four"
+      ". . . . five five five five five . . .";
   }
 }
 
 .work {
-  @media(min-width: 500px) {
+  @media (min-width: 500px) {
     grid-column: span 1;
 
     &:last-child {
@@ -266,7 +264,7 @@ body {
     }
   }
 
-  @media(min-width: $desktop) {
+  @media (min-width: $desktop) {
     margin-bottom: 0;
 
     &:nth-child(1) {
@@ -283,6 +281,10 @@ body {
 
     &:nth-child(4) {
       grid-area: four;
+    }
+
+    &:nth-child(5) {
+      grid-area: five;
     }
   }
 
@@ -312,7 +314,7 @@ body {
   &__title {
     font-weight: 600;
     font-size: 18px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 1.4;
   }
 
@@ -320,13 +322,13 @@ body {
     display: block;
     font-weight: 400;
     font-size: 14px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 1.5;
     display: block;
   }
 
   &__info {
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       max-width: 80%;
     }
 
@@ -348,7 +350,7 @@ body {
         flex: 1 1 auto;
         width: 100%;
         padding: 16px 24px;
-        border-bottom: 1px solid rgba(255, 255, 255, .3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         color: var(--white);
         font-weight: 400;
         font-size: 18px;
@@ -359,39 +361,36 @@ body {
           opacity: 0;
           position: relative;
           left: -50px;
-          transition: left .2s ease-in-out;
+          transition: left 0.2s ease-in-out;
           will-change: left;
 
           &:after {
             content: "";
             display: inline-block;
-            background: url('../images/link.png') no-repeat center;
+            background: url("../images/link.png") no-repeat center;
             background-size: contain;
             margin-left: 4px;
             width: 16px;
             height: 16px;
             vertical-align: middle;
             transform-origin: top;
-            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+            transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
             will-change: transform, opacity;
           }
-
         }
 
         &:hover {
           .visit-link {
             opacity: 1;
             left: 20px;
-            transition: left .2s ease-in-out, opacity .2s ease-in-out;
+            transition: left 0.2s ease-in-out, opacity 0.2s ease-in-out;
             will-change: left, opacity;
-
           }
         }
       }
     }
   }
 }
-
 
 .testimonial {
   display: flex;
@@ -404,8 +403,10 @@ body {
     flex-direction: column;
     align-content: flex-start;
     justify-content: center;
-    background: transparent url('../images/testimonials.png') no-repeat scroll center center / cover;
-    background: transparent url('../images/testimonials.webp') no-repeat scroll center center / cover;
+    background: transparent url("../images/testimonials.png") no-repeat scroll
+      center center / cover;
+    background: transparent url("../images/testimonials.webp") no-repeat scroll
+      center center / cover;
 
     &:first-child {
       padding: 40px 58px 25px;
@@ -420,9 +421,7 @@ body {
       }
     }
 
-
-    @media(min-width: $mobileL) {
-
+    @media (min-width: $mobileL) {
       &:last-child {
         .testimonial--by {
           margin-right: 20px;
@@ -436,7 +435,7 @@ body {
       padding: 25px 58px;
     }
 
-    @media(min-width: $ptablet) {
+    @media (min-width: $ptablet) {
       min-height: 384px;
       width: 33.33333333%;
       padding: 58px 40px;
@@ -453,7 +452,7 @@ body {
     letter-spacing: 1px;
     font-family: "Dosis", sans-serif;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       font-size: 18px;
     }
   }
@@ -468,20 +467,17 @@ body {
     line-height: 1.2;
     font-family: "Dosis", sans-serif;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       font-size: 28px;
     }
   }
-
 }
-
-
 
 .talk--to {
   padding-top: 90px;
   padding-bottom: 90px;
 
-  @media(min-width: $tablet) {
+  @media (min-width: $tablet) {
     padding-top: 160px;
     padding-bottom: 160px;
   }
@@ -491,19 +487,18 @@ body {
   text-align: center;
 
   &-me {
-
     font-size: 44px;
     margin-bottom: 60px;
     text-align: center;
     line-height: 1.5;
-    letter-spacing: -.5px;
+    letter-spacing: -0.5px;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       font-size: 60px;
     }
 
     span {
-      @media(min-width: $mobile) {
+      @media (min-width: $mobile) {
         display: block;
       }
     }
@@ -539,22 +534,21 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       padding-left: 0;
       padding-right: 0;
       padding-bottom: 40px;
     }
 
-    @media(min-width: $desktop) {
+    @media (min-width: $desktop) {
       padding-left: 0;
       padding-right: 0;
     }
 
     li {
-
       margin-right: 30px;
 
-      @media(min-width: $mobile) {
+      @media (min-width: $mobile) {
         // margin-bottom: 33px;
         // flex: 1 0 auto;
         text-align: center;
@@ -568,7 +562,7 @@ body {
         flex: 1 0 100%;
         text-align: center;
 
-        @media(min-width: $mobile) {
+        @media (min-width: $mobile) {
           margin-top: 0;
           order: 0;
           text-align: left;

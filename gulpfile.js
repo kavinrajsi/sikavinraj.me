@@ -1,4 +1,4 @@
-// generated on 2020-06-06 using generator-webapp 4.0.0-7
+// generated on 2023-08-07 using generator-webapp 4.0.0-8
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -6,8 +6,7 @@ const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const { argv } = require('yargs');
-const critical = require('critical').stream;
-const workboxBuild = require('workbox-build');
+const sass = require('gulp-sass')(require('sass'));
 
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
@@ -19,47 +18,50 @@ const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
 function styles() {
-  return src('app/styles/*.scss')
+  return src('app/styles/*.scss', {
+    sourcemaps: !isProd,
+  })
     .pipe($.plumber())
-    .pipe($.if(!isProd, $.sourcemaps.init()))
-    .pipe($.sass.sync({
+    .pipe(sass.sync({
       outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.']
-    }).on('error', $.sass.logError))
+    }).on('error', sass.logError))
     .pipe($.postcss([
       autoprefixer()
     ]))
-    .pipe($.if(!isProd, $.sourcemaps.write()))
-    .pipe(dest('.tmp/styles'))
+    .pipe(dest('.tmp/styles', {
+      sourcemaps: !isProd,
+    }))
     .pipe(server.reload({stream: true}));
 };
 
 function scripts() {
-  return src('app/scripts/**/*.js')
+  return src('app/scripts/**/*.js', {
+    sourcemaps: !isProd,
+  })
     .pipe($.plumber())
-    .pipe($.if(!isProd, $.sourcemaps.init()))
     .pipe($.babel())
-    .pipe($.if(!isProd, $.sourcemaps.write('.')))
-    .pipe(dest('.tmp/scripts'))
+    .pipe(dest('.tmp/scripts', {
+      sourcemaps: !isProd ? '.' : false,
+    }))
     .pipe(server.reload({stream: true}));
 };
 
 
-const lintBase = files => {
+const lintBase = (files, options) => {
   return src(files)
-    .pipe($.eslint({ fix: true }))
+    .pipe($.eslint(options))
     .pipe(server.reload({stream: true, once: true}))
     .pipe($.eslint.format())
     .pipe($.if(!server.active, $.eslint.failAfterError()));
 }
 function lint() {
-  return lintBase('app/scripts/**/*.js')
+  return lintBase('app/scripts/**/*.js', { fix: true })
     .pipe(dest('app/scripts'));
 };
 function lintTest() {
-  return lintBase('test/spec/**/*.js')
-    .pipe(dest('test/spec'));
+  return lintBase('test/spec/**/*.js');
 };
 
 function html() {
@@ -118,8 +120,6 @@ const build = series(
     fonts,
     extras
   ),
-  criticalCss,
-  serviceWorker,
   measureSize
 );
 
@@ -160,8 +160,8 @@ function startTestServer() {
     }
   });
 
+  watch('test/index.html').on('change', server.reload);
   watch('app/scripts/**/*.js', scripts);
-  watch(['test/spec/**/*.js', 'test/index.html']).on('change', server.reload);
   watch('test/spec/**/*.js', lintTest);
 }
 
@@ -175,46 +175,6 @@ function startDistServer() {
         '/node_modules': 'node_modules'
       }
     }
-  });
-}
-
-function criticalCss() {
-  return src('dist/*.html')
-  .pipe(critical(
-    {
-      inline: true,
-      minify: true,
-      base: 'dist/',
-      dimensions: [
-        {
-          height: 200,
-          width: 500,
-        },
-        {
-          height: 900,
-          width: 1300,
-        },
-      ],
-    }),
-    (err, output) => {
-      if (err) {
-        console.error(err);
-      } else if (output) {
-        console.log('Generated critical CSS');
-      }
-    }
-  )
-  .pipe(dest('dist'));
-}
-
-
-function serviceWorker() {
-  return workboxBuild.generateSW({
-    globDirectory: 'dist',
-    globPatterns: [
-      '**/*.{html,json,js,css,png,jpg,svg}',
-    ],
-    swDest: 'dist/sw.js',
   });
 }
 
